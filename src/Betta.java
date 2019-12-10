@@ -69,24 +69,24 @@ public class Betta{
 	public ArrayList<byte[]> splitByteArray(byte[] array, byte split_value) {
 		ArrayList <byte[]> super_list = new ArrayList<byte[]>();
 		ArrayList <Byte> byte_list = new ArrayList<Byte>();		//.. byte_list в итоге должен быть преобразован
-																//..в обычный байтовый массив и добавлен в super_list
+										//..в обычный байтовый массив и добавлен в super_list
 		
 		byte[] op_array = new byte[array.length + 1];		//..op_array is operational_array
 		op_array[op_array.length - 1] = split_value;		//..выражение только для того чтобы считалась последняя строка
 		for(int i = 0; i < array.length; i++) {
 			op_array[i] = array[i];
-		}													//..end
+		}							//..end
 		
 		for(int i = 0; i < op_array.length; i++) {
 			if(op_array[i] != split_value)byte_list.add(op_array[i]);
 			
 			else {
-				byte[] for_sl = new byte[byte_list.size()];		//..for variable: super_list
+				byte[] for_sl = new byte[byte_list.size()];			//..for variable: super_list
 					for(int j = 0; j < for_sl.length; j++) {
 						for_sl[j] = byte_list.get(j);			//.. simple convertation
-					}											//..FROM byte_list TO for_sl
+					}							//..FROM byte_list TO for_sl
 				byte_list.removeAll(byte_list);					//..clearing for next operations
-				super_list.add(for_sl);							//..finish operation
+				super_list.add(for_sl);						//..finish operation
 			}
 		}
 		return super_list;
@@ -112,7 +112,7 @@ public class Betta{
 				if(array[k] == 47 && array[k + 1] == 47) {		//..здесь происходит поиск "//" "47-47"
 					list.remove(i);
 					flag = true;
-					i--;										//..уменьшаем счетчик т.к. имеется удаление
+					i--;						//..уменьшаем счетчик т.к. имеется удаление
 					count++;
 					break;
 				}	
@@ -144,7 +144,7 @@ public class Betta{
 					}
 			}
 			
-		String names = "";										//..displays names of classes
+		String names = "";							//..displays names of classes
 			for(int i = 0; i < list_names.size(); i++) {
 				names = new String(list_names.get(i));		
 				byte[] probe = list_names.get(i);
@@ -179,8 +179,8 @@ public class Betta{
 						byte[] array_two = new byte[0];
 				
 							for(k = i + 1; k < list.size(); k++) {					//..cycle for searshing
-								array_two = list.get(k);							//.."125} -1"
-								byte_size += array_two.length;						//.."123{ +1"
+								array_two = list.get(k);					//.."125} -1"
+								byte_size += array_two.length;					//.."123{ +1"
 									for(int l = 0; l < array_two.length; l++) {
 										if(array_two[l] == 125)bracket_count--;
 										if(array_two[l] == 123)bracket_count++;								
