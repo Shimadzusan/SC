@@ -17,7 +17,9 @@ public class Alpha {
 	
 	byte[] last_array = new byte[0];
 	String aggregate_text = "";
-	
+	/**this is simple note for some probe
+	 *..developing class alpha etc 
+	 */
 	//String patch = "C:\\Users\\Stalin\\workspace\\SC\\src";
 	//String patch = "C:\\Users\\user\\workspace\\T2050\\src\\Version_two";
 	String path;
