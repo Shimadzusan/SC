@@ -1,3 +1,4 @@
+package core;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -5,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Alpha {	
+public class LiteCodeAnalysis {	
 	int value_of_symbols = 0;
 	int value_of_asserts = 0;
 	int value_of_blocks = 0;
@@ -17,14 +18,9 @@ public class Alpha {
 	
 	byte[] last_array = new byte[0];
 	String aggregate_text = "";
-	/**this is simple note for some probe
-	 *..developing class alpha etc 
-	 */
-	//String patch = "C:\\Users\\Stalin\\workspace\\SC\\src";
-	//String patch = "C:\\Users\\user\\workspace\\T2050\\src\\Version_two";
 	String path;
 	
-	public Alpha() {
+	public LiteCodeAnalysis() {
 		
 	}
 	
@@ -45,7 +41,7 @@ public class Alpha {
 	 * Version Two, работаем с байтами
 	 * 
 	 */
-	public Alpha(String address) throws IOException {
+	public LiteCodeAnalysis(String address) throws IOException {
 		this.path = address;
 		ArrayList<String> listNames = getListNames(path);
 		initAggregateText(listNames);
@@ -54,28 +50,26 @@ public class Alpha {
 //==========INTERFACE==========
 		System.out.println("...scann code started");
 		System.out.println("..modul alpha");
-		System.out.println();
-		System.out.println("количество символов:     " + value_of_symbols);
-		System.out.println("количество строк:        " + getRows(last_array));
-		System.out.println("количество выражений:    " + value_of_asserts);
-		System.out.println("количество блоков:       " + value_of_blocks);
-		System.out.println("количество import(s):    " + value_of_imports);
-		System.out.println("количество classe(s):    " + value_of_classes);
-		System.out.println("количество interface(s): " + value_of_interfaces);
-		System.out.println("количество file(s):      " + listNames.size());
+		System.out.println("");
+		System.out.println("quantity symbols:     " + value_of_symbols);
+		System.out.println("quantity rows:        " + getRows(last_array));
+		System.out.println("quantity asserts:    " + value_of_asserts);
+		System.out.println("quantity blocks(?):       " + value_of_blocks);
+		System.out.println("quantity import(s):    " + value_of_imports);
+		System.out.println("quantity classe(s):    " + value_of_classes);
+		System.out.println("quantity interface(s): " + value_of_interfaces);
+		System.out.println("quantity file(s):      " + listNames.size());
 		System.out.println();
 		System.out.println("..alpha end");
 		System.out.println("...scann code complete");
 		System.out.println("...program end.");
 		System.out.println("====================================================");
-		System.out.println();
+		//System.out.println(aggregate_text);
 //======END_INTERFACE==========
 	}
 	
-	/**
-	 * Метод getListNames принимает на вход адрес по которому расположен материал для анализа,
-	 * и формирует на выходе список имен файлов
-	 */
+	/** Метод getListNames принимает на вход адрес по которому расположен материал для анализа,
+	 * и формирует на выходе список имен файлов */
 	public ArrayList<String> getListNames(String address) {
 		File folder = new File(address);
 		File[] listOfFiles = folder.listFiles();
@@ -103,10 +97,10 @@ public class Alpha {
 			String inputLine;
 	        StringBuffer response = new StringBuffer();
 		        while ((inputLine = bufferForSymbols.readLine()) != null) {
-		            response.append(inputLine);
+		            response.append(inputLine + "\n");
 		        }
 		    bufferForSymbols.close();
-		    aggregate_text += response.toString();
+		    aggregate_text += response.toString() + "\n";
 		 }
 	}
 	

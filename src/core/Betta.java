@@ -1,3 +1,4 @@
+package core;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +21,10 @@ public class Betta{
 	
 	String aggregate_text = "";
 
+	public Betta() {
+		
+	}
+	
 	public Betta(String address) throws IOException {
 		this.address = address;
 		define_general_byte_array();
@@ -53,7 +58,7 @@ public class Betta{
 	}
 		
 	public void define_general_byte_array() throws IOException{
-		Alpha instance = new Alpha();
+		LiteCodeAnalysis instance = new LiteCodeAnalysis();
 		instance.setPath(address);
 		instance.initGeneralArray(instance.getListNames(address));
 		
