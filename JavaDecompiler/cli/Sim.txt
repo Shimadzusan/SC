@@ -1,0 +1,585 @@
+Classfile /C:/Users/worker/IdeaProjects/SC/JavaDecompiler/io/gatling/javaapi/core/Simulation.class
+  Last modified 1 џэт. 2010 у.; size 6052 bytes
+  SHA-256 checksum 25d688d2f4b45035deab3ad1d47d1dc09ebd22e1ffa69e401727eb9345cfb118
+  Compiled from "Simulation.java"
+public abstract class io.gatling.javaapi.core.Simulation
+  minor version: 0
+  major version: 52
+  flags: (0x0421) ACC_PUBLIC, ACC_SUPER, ACC_ABSTRACT
+  this_class: #43                         // io/gatling/javaapi/core/Simulation
+  super_class: #44                        // java/lang/Object
+  interfaces: 0, fields: 6, methods: 13, attributes: 3
+Constant pool:
+    #1 = Fieldref           #43.#93       // io/gatling/javaapi/core/Simulation._globalPauseType:Lio/gatling/javaapi/core/PauseType;
+    #2 = Fieldref           #43.#94       // io/gatling/javaapi/core/Simulation._globalThrottleSteps:Ljava/util/List;
+    #3 = Fieldref           #43.#95       // io/gatling/javaapi/core/Simulation._maxDuration:Ljava/time/Duration;
+    #4 = Fieldref           #43.#96       // io/gatling/javaapi/core/Simulation._assertions:Ljava/util/List;
+    #5 = Fieldref           #43.#97       // io/gatling/javaapi/core/Simulation._globalProtocols:Ljava/util/Map;
+    #6 = Methodref          #44.#98       // java/lang/Object."<init>":()V
+    #7 = Class              #99           // java/util/HashMap
+    #8 = Methodref          #7.#98        // java/util/HashMap."<init>":()V
+    #9 = Class              #100          // java/util/ArrayList
+   #10 = Methodref          #9.#98        // java/util/ArrayList."<init>":()V
+   #11 = Fieldref           #101.#102     // io/gatling/javaapi/core/PauseType.Constant:Lio/gatling/javaapi/core/PauseType;
+   #12 = Methodref          #103.#104     // java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+   #13 = Methodref          #43.#105      // io/gatling/javaapi/core/Simulation.setUp:(Ljava/util/List;)Lio/gatling/javaapi/core/Simulation$SetUp;
+   #14 = Fieldref           #43.#106      // io/gatling/javaapi/core/Simulation._populationBuilders:Ljava/util/List;
+   #15 = Class              #107          // java/lang/UnsupportedOperationException
+   #16 = String             #108          // Can only call setUp once
+   #17 = Methodref          #15.#109      // java/lang/UnsupportedOperationException."<init>":(Ljava/lang/String;)V
+   #18 = Class              #110          // io/gatling/javaapi/core/Simulation$SetUp
+   #19 = Methodref          #18.#111      // io/gatling/javaapi/core/Simulation$SetUp."<init>":(Lio/gatling/javaapi/core/Simulation;Lio/gatling/javaapi/core/Simulation$1;)V
+   #20 = Fieldref           #112.#113     // io/gatling/core/scenario/Simulation$.MODULE$:Lio/gatling/core/scenario/Simulation$;
+   #21 = Methodref          #44.#114      // java/lang/Object.getClass:()Ljava/lang/Class;
+   #22 = Methodref          #115.#116     // java/lang/Class.getName:()Ljava/lang/String;
+   #23 = InterfaceMethodref #28.#117      // java/util/List.stream:()Ljava/util/stream/Stream;
+   #24 = InvokeDynamic      #0:#123       // #0:apply:()Ljava/util/function/Function;
+   #25 = InterfaceMethodref #124.#125     // java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+   #26 = Methodref          #126.#127     // java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+   #27 = InterfaceMethodref #124.#128     // java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+   #28 = Class              #129          // java/util/List
+   #29 = Methodref          #130.#131     // io/gatling/javaapi/core/internal/Converters.toScalaSeq:(Ljava/util/List;)Lscala/collection/immutable/Seq;
+   #30 = InterfaceMethodref #132.#133     // scala/collection/immutable/Seq.toList:()Lscala/collection/immutable/List;
+   #31 = Methodref          #130.#134     // io/gatling/javaapi/core/internal/Converters.toScalaMap:(Ljava/util/Map;)Lscala/collection/immutable/Map;
+   #32 = InvokeDynamic      #1:#123       // #1:apply:()Ljava/util/function/Function;
+   #33 = Methodref          #137.#138     // scala/Option.apply:(Ljava/lang/Object;)Lscala/Option;
+   #34 = InvokeDynamic      #2:#141       // #2:apply:()Lscala/Function1;
+   #35 = Methodref          #137.#142     // scala/Option.map:(Lscala/Function1;)Lscala/Option;
+   #36 = Methodref          #101.#143     // io/gatling/javaapi/core/PauseType.asScala:()Lio/gatling/core/pause/PauseType;
+   #37 = InvokeDynamic      #3:#123       // #3:apply:()Ljava/util/function/Function;
+   #38 = InvokeDynamic      #4:#149       // #4:apply:(Lio/gatling/javaapi/core/Simulation;)Lscala/Function0;
+   #39 = InvokeDynamic      #5:#149       // #5:apply:(Lio/gatling/javaapi/core/Simulation;)Lscala/Function0;
+   #40 = Methodref          #112.#151     // io/gatling/core/scenario/Simulation$.params:(Ljava/lang/String;Lscala/collection/immutable/List;Lscala/collection/immutable/Map;Lscala/collection/immutable/Seq;Lscala/Option;Lio/gatling/core/pause/PauseType;Lscala/collection/Iterable;Lscala/Function0;Lscala/Function0;Lio/gatling/core/config/GatlingConfiguration;)Lio/gatling/core/scenario/SimulationParams;
+   #41 = Methodref          #43.#152      // io/gatling/javaapi/core/Simulation.after:()V
+   #42 = Methodref          #43.#153      // io/gatling/javaapi/core/Simulation.before:()V
+   #43 = Class              #154          // io/gatling/javaapi/core/Simulation
+   #44 = Class              #155          // java/lang/Object
+   #45 = Class              #156          // io/gatling/javaapi/core/Simulation$1
+   #46 = Utf8               InnerClasses
+   #47 = Utf8               SetUp
+   #48 = Utf8               _populationBuilders
+   #49 = Utf8               Ljava/util/List;
+   #50 = Utf8               Signature
+   #51 = Utf8               Ljava/util/List<Lio/gatling/javaapi/core/PopulationBuilder;>;
+   #52 = Utf8               _globalProtocols
+   #53 = Utf8               Ljava/util/Map;
+   #54 = Utf8               Ljava/util/Map<Ljava/lang/Class<+Lio/gatling/core/protocol/Protocol;>;Lio/gatling/core/protocol/Protocol;>;
+   #55 = Utf8               _assertions
+   #56 = Utf8               Ljava/util/List<Lio/gatling/javaapi/core/Assertion;>;
+   #57 = Utf8               _maxDuration
+   #58 = Utf8               Ljava/time/Duration;
+   #59 = Utf8               _globalPauseType
+   #60 = Utf8               Lio/gatling/javaapi/core/PauseType;
+   #61 = Utf8               _globalThrottleSteps
+   #62 = Utf8               Ljava/util/List<Lio/gatling/javaapi/core/ThrottleStep;>;
+   #63 = Utf8               <init>
+   #64 = Utf8               ()V
+   #65 = Utf8               Code
+   #66 = Utf8               LineNumberTable
+   #67 = Utf8               before
+   #68 = Utf8               after
+   #69 = Utf8               setUp
+   #70 = Utf8               ([Lio/gatling/javaapi/core/PopulationBuilder;)Lio/gatling/javaapi/core/Simulation$SetUp;
+   #71 = Utf8               RuntimeVisibleAnnotations
+   #72 = Utf8               Ljavax/annotation/Nonnull;
+   #73 = Utf8               RuntimeVisibleParameterAnnotations
+   #74 = Utf8               (Ljava/util/List;)Lio/gatling/javaapi/core/Simulation$SetUp;
+   #75 = Utf8               StackMapTable
+   #76 = Utf8               (Ljava/util/List<Lio/gatling/javaapi/core/PopulationBuilder;>;)Lio/gatling/javaapi/core/Simulation$SetUp;
+   #77 = Utf8               params
+   #78 = Utf8               (Lio/gatling/core/config/GatlingConfiguration;)Lio/gatling/core/scenario/SimulationParams;
+   #79 = Utf8               lambda$params$1
+   #80 = Utf8               ()Lscala/runtime/BoxedUnit;
+   #81 = Utf8               lambda$params$0
+   #82 = Utf8               access$102
+   #83 = Utf8               (Lio/gatling/javaapi/core/Simulation;Ljava/util/Map;)Ljava/util/Map;
+   #84 = Utf8               access$202
+   #85 = Utf8               (Lio/gatling/javaapi/core/Simulation;Ljava/util/List;)Ljava/util/List;
+   #86 = Utf8               access$302
+   #87 = Utf8               (Lio/gatling/javaapi/core/Simulation;Ljava/time/Duration;)Ljava/time/Duration;
+   #88 = Utf8               access$402
+   #89 = Utf8               access$502
+   #90 = Utf8               (Lio/gatling/javaapi/core/Simulation;Lio/gatling/javaapi/core/PauseType;)Lio/gatling/javaapi/core/PauseType;
+   #91 = Utf8               SourceFile
+   #92 = Utf8               Simulation.java
+   #93 = NameAndType        #59:#60       // _globalPauseType:Lio/gatling/javaapi/core/PauseType;
+   #94 = NameAndType        #61:#49       // _globalThrottleSteps:Ljava/util/List;
+   #95 = NameAndType        #57:#58       // _maxDuration:Ljava/time/Duration;
+   #96 = NameAndType        #55:#49       // _assertions:Ljava/util/List;
+   #97 = NameAndType        #52:#53       // _globalProtocols:Ljava/util/Map;
+   #98 = NameAndType        #63:#64       // "<init>":()V
+   #99 = Utf8               java/util/HashMap
+  #100 = Utf8               java/util/ArrayList
+  #101 = Class              #157          // io/gatling/javaapi/core/PauseType
+  #102 = NameAndType        #158:#60      // Constant:Lio/gatling/javaapi/core/PauseType;
+  #103 = Class              #159          // java/util/Arrays
+  #104 = NameAndType        #160:#161     // asList:([Ljava/lang/Object;)Ljava/util/List;
+  #105 = NameAndType        #69:#74       // setUp:(Ljava/util/List;)Lio/gatling/javaapi/core/Simulation$SetUp;
+  #106 = NameAndType        #48:#49       // _populationBuilders:Ljava/util/List;
+  #107 = Utf8               java/lang/UnsupportedOperationException
+  #108 = Utf8               Can only call setUp once
+  #109 = NameAndType        #63:#162      // "<init>":(Ljava/lang/String;)V
+  #110 = Utf8               io/gatling/javaapi/core/Simulation$SetUp
+  #111 = NameAndType        #63:#163      // "<init>":(Lio/gatling/javaapi/core/Simulation;Lio/gatling/javaapi/core/Simulation$1;)V
+  #112 = Class              #164          // io/gatling/core/scenario/Simulation$
+  #113 = NameAndType        #165:#166     // MODULE$:Lio/gatling/core/scenario/Simulation$;
+  #114 = NameAndType        #167:#168     // getClass:()Ljava/lang/Class;
+  #115 = Class              #169          // java/lang/Class
+  #116 = NameAndType        #170:#171     // getName:()Ljava/lang/String;
+  #117 = NameAndType        #172:#173     // stream:()Ljava/util/stream/Stream;
+  #118 = Utf8               BootstrapMethods
+  #119 = MethodHandle       6:#174        // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #120 = MethodType         #175          //  (Ljava/lang/Object;)Ljava/lang/Object;
+  #121 = MethodHandle       5:#176        // REF_invokeVirtual io/gatling/javaapi/core/PopulationBuilder.asScala:()Lio/gatling/core/structure/PopulationBuilder;
+  #122 = MethodType         #177          //  (Lio/gatling/javaapi/core/PopulationBuilder;)Lio/gatling/core/structure/PopulationBuilder;
+  #123 = NameAndType        #178:#179     // apply:()Ljava/util/function/Function;
+  #124 = Class              #180          // java/util/stream/Stream
+  #125 = NameAndType        #181:#182     // map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+  #126 = Class              #183          // java/util/stream/Collectors
+  #127 = NameAndType        #184:#185     // toList:()Ljava/util/stream/Collector;
+  #128 = NameAndType        #186:#187     // collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+  #129 = Utf8               java/util/List
+  #130 = Class              #188          // io/gatling/javaapi/core/internal/Converters
+  #131 = NameAndType        #189:#190     // toScalaSeq:(Ljava/util/List;)Lscala/collection/immutable/Seq;
+  #132 = Class              #191          // scala/collection/immutable/Seq
+  #133 = NameAndType        #184:#192     // toList:()Lscala/collection/immutable/List;
+  #134 = NameAndType        #193:#194     // toScalaMap:(Ljava/util/Map;)Lscala/collection/immutable/Map;
+  #135 = MethodHandle       5:#195        // REF_invokeVirtual io/gatling/javaapi/core/Assertion.asScala:()Lio/gatling/commons/stats/assertion/Assertion;
+  #136 = MethodType         #196          //  (Lio/gatling/javaapi/core/Assertion;)Lio/gatling/commons/stats/assertion/Assertion;
+  #137 = Class              #197          // scala/Option
+  #138 = NameAndType        #178:#198     // apply:(Ljava/lang/Object;)Lscala/Option;
+  #139 = MethodHandle       6:#199        // REF_invokeStatic io/gatling/javaapi/core/internal/Converters.toScalaDuration:(Ljava/time/Duration;)Lscala/concurrent/duration/FiniteDuration;
+  #140 = MethodType         #200          //  (Ljava/time/Duration;)Lscala/concurrent/duration/FiniteDuration;
+  #141 = NameAndType        #178:#201     // apply:()Lscala/Function1;
+  #142 = NameAndType        #181:#202     // map:(Lscala/Function1;)Lscala/Option;
+  #143 = NameAndType        #203:#204     // asScala:()Lio/gatling/core/pause/PauseType;
+  #144 = MethodHandle       5:#205        // REF_invokeVirtual io/gatling/javaapi/core/ThrottleStep.asScala:()Lio/gatling/core/controller/throttle/ThrottleStep;
+  #145 = MethodType         #206          //  (Lio/gatling/javaapi/core/ThrottleStep;)Lio/gatling/core/controller/throttle/ThrottleStep;
+  #146 = MethodType         #207          //  ()Ljava/lang/Object;
+  #147 = MethodHandle       7:#208        // REF_invokeSpecial io/gatling/javaapi/core/Simulation.lambda$params$0:()Lscala/runtime/BoxedUnit;
+  #148 = MethodType         #80           //  ()Lscala/runtime/BoxedUnit;
+  #149 = NameAndType        #178:#209     // apply:(Lio/gatling/javaapi/core/Simulation;)Lscala/Function0;
+  #150 = MethodHandle       7:#210        // REF_invokeSpecial io/gatling/javaapi/core/Simulation.lambda$params$1:()Lscala/runtime/BoxedUnit;
+  #151 = NameAndType        #77:#211      // params:(Ljava/lang/String;Lscala/collection/immutable/List;Lscala/collection/immutable/Map;Lscala/collection/immutable/Seq;Lscala/Option;Lio/gatling/core/pause/PauseType;Lscala/collection/Iterable;Lscala/Function0;Lscala/Function0;Lio/gatling/core/config/GatlingConfiguration;)Lio/gatling/core/scenario/SimulationParams;
+  #152 = NameAndType        #68:#64       // after:()V
+  #153 = NameAndType        #67:#64       // before:()V
+  #154 = Utf8               io/gatling/javaapi/core/Simulation
+  #155 = Utf8               java/lang/Object
+  #156 = Utf8               io/gatling/javaapi/core/Simulation$1
+  #157 = Utf8               io/gatling/javaapi/core/PauseType
+  #158 = Utf8               Constant
+  #159 = Utf8               java/util/Arrays
+  #160 = Utf8               asList
+  #161 = Utf8               ([Ljava/lang/Object;)Ljava/util/List;
+  #162 = Utf8               (Ljava/lang/String;)V
+  #163 = Utf8               (Lio/gatling/javaapi/core/Simulation;Lio/gatling/javaapi/core/Simulation$1;)V
+  #164 = Utf8               io/gatling/core/scenario/Simulation$
+  #165 = Utf8               MODULE$
+  #166 = Utf8               Lio/gatling/core/scenario/Simulation$;
+  #167 = Utf8               getClass
+  #168 = Utf8               ()Ljava/lang/Class;
+  #169 = Utf8               java/lang/Class
+  #170 = Utf8               getName
+  #171 = Utf8               ()Ljava/lang/String;
+  #172 = Utf8               stream
+  #173 = Utf8               ()Ljava/util/stream/Stream;
+  #174 = Methodref          #212.#213     // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #175 = Utf8               (Ljava/lang/Object;)Ljava/lang/Object;
+  #176 = Methodref          #214.#215     // io/gatling/javaapi/core/PopulationBuilder.asScala:()Lio/gatling/core/structure/PopulationBuilder;
+  #177 = Utf8               (Lio/gatling/javaapi/core/PopulationBuilder;)Lio/gatling/core/structure/PopulationBuilder;
+  #178 = Utf8               apply
+  #179 = Utf8               ()Ljava/util/function/Function;
+  #180 = Utf8               java/util/stream/Stream
+  #181 = Utf8               map
+  #182 = Utf8               (Ljava/util/function/Function;)Ljava/util/stream/Stream;
+  #183 = Utf8               java/util/stream/Collectors
+  #184 = Utf8               toList
+  #185 = Utf8               ()Ljava/util/stream/Collector;
+  #186 = Utf8               collect
+  #187 = Utf8               (Ljava/util/stream/Collector;)Ljava/lang/Object;
+  #188 = Utf8               io/gatling/javaapi/core/internal/Converters
+  #189 = Utf8               toScalaSeq
+  #190 = Utf8               (Ljava/util/List;)Lscala/collection/immutable/Seq;
+  #191 = Utf8               scala/collection/immutable/Seq
+  #192 = Utf8               ()Lscala/collection/immutable/List;
+  #193 = Utf8               toScalaMap
+  #194 = Utf8               (Ljava/util/Map;)Lscala/collection/immutable/Map;
+  #195 = Methodref          #216.#217     // io/gatling/javaapi/core/Assertion.asScala:()Lio/gatling/commons/stats/assertion/Assertion;
+  #196 = Utf8               (Lio/gatling/javaapi/core/Assertion;)Lio/gatling/commons/stats/assertion/Assertion;
+  #197 = Utf8               scala/Option
+  #198 = Utf8               (Ljava/lang/Object;)Lscala/Option;
+  #199 = Methodref          #130.#218     // io/gatling/javaapi/core/internal/Converters.toScalaDuration:(Ljava/time/Duration;)Lscala/concurrent/duration/FiniteDuration;
+  #200 = Utf8               (Ljava/time/Duration;)Lscala/concurrent/duration/FiniteDuration;
+  #201 = Utf8               ()Lscala/Function1;
+  #202 = Utf8               (Lscala/Function1;)Lscala/Option;
+  #203 = Utf8               asScala
+  #204 = Utf8               ()Lio/gatling/core/pause/PauseType;
+  #205 = Methodref          #219.#220     // io/gatling/javaapi/core/ThrottleStep.asScala:()Lio/gatling/core/controller/throttle/ThrottleStep;
+  #206 = Utf8               (Lio/gatling/javaapi/core/ThrottleStep;)Lio/gatling/core/controller/throttle/ThrottleStep;
+  #207 = Utf8               ()Ljava/lang/Object;
+  #208 = Methodref          #43.#221      // io/gatling/javaapi/core/Simulation.lambda$params$0:()Lscala/runtime/BoxedUnit;
+  #209 = Utf8               (Lio/gatling/javaapi/core/Simulation;)Lscala/Function0;
+  #210 = Methodref          #43.#222      // io/gatling/javaapi/core/Simulation.lambda$params$1:()Lscala/runtime/BoxedUnit;
+  #211 = Utf8               (Ljava/lang/String;Lscala/collection/immutable/List;Lscala/collection/immutable/Map;Lscala/collection/immutable/Seq;Lscala/Option;Lio/gatling/core/pause/PauseType;Lscala/collection/Iterable;Lscala/Function0;Lscala/Function0;Lio/gatling/core/config/GatlingConfiguration;)Lio/gatling/core/scenario/SimulationParams;
+  #212 = Class              #223          // java/lang/invoke/LambdaMetafactory
+  #213 = NameAndType        #224:#227     // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #214 = Class              #228          // io/gatling/javaapi/core/PopulationBuilder
+  #215 = NameAndType        #203:#229     // asScala:()Lio/gatling/core/structure/PopulationBuilder;
+  #216 = Class              #230          // io/gatling/javaapi/core/Assertion
+  #217 = NameAndType        #203:#231     // asScala:()Lio/gatling/commons/stats/assertion/Assertion;
+  #218 = NameAndType        #232:#200     // toScalaDuration:(Ljava/time/Duration;)Lscala/concurrent/duration/FiniteDuration;
+  #219 = Class              #233          // io/gatling/javaapi/core/ThrottleStep
+  #220 = NameAndType        #203:#234     // asScala:()Lio/gatling/core/controller/throttle/ThrottleStep;
+  #221 = NameAndType        #81:#80       // lambda$params$0:()Lscala/runtime/BoxedUnit;
+  #222 = NameAndType        #79:#80       // lambda$params$1:()Lscala/runtime/BoxedUnit;
+  #223 = Utf8               java/lang/invoke/LambdaMetafactory
+  #224 = Utf8               metafactory
+  #225 = Class              #236          // java/lang/invoke/MethodHandles$Lookup
+  #226 = Utf8               Lookup
+  #227 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #228 = Utf8               io/gatling/javaapi/core/PopulationBuilder
+  #229 = Utf8               ()Lio/gatling/core/structure/PopulationBuilder;
+  #230 = Utf8               io/gatling/javaapi/core/Assertion
+  #231 = Utf8               ()Lio/gatling/commons/stats/assertion/Assertion;
+  #232 = Utf8               toScalaDuration
+  #233 = Utf8               io/gatling/javaapi/core/ThrottleStep
+  #234 = Utf8               ()Lio/gatling/core/controller/throttle/ThrottleStep;
+  #235 = Class              #237          // java/lang/invoke/MethodHandles
+  #236 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #237 = Utf8               java/lang/invoke/MethodHandles
+{
+  private java.util.List<io.gatling.javaapi.core.PopulationBuilder> _populationBuilders;
+    descriptor: Ljava/util/List;
+    flags: (0x0002) ACC_PRIVATE
+    Signature: #51                          // Ljava/util/List<Lio/gatling/javaapi/core/PopulationBuilder;>;
+
+  private java.util.Map<java.lang.Class<? extends io.gatling.core.protocol.Protocol>, io.gatling.core.protocol.Protocol> _globalProtocols;
+    descriptor: Ljava/util/Map;
+    flags: (0x0002) ACC_PRIVATE
+    Signature: #54                          // Ljava/util/Map<Ljava/lang/Class<+Lio/gatling/core/protocol/Protocol;>;Lio/gatling/core/protocol/Protocol;>;
+
+  private java.util.List<io.gatling.javaapi.core.Assertion> _assertions;
+    descriptor: Ljava/util/List;
+    flags: (0x0002) ACC_PRIVATE
+    Signature: #56                          // Ljava/util/List<Lio/gatling/javaapi/core/Assertion;>;
+
+  private java.time.Duration _maxDuration;
+    descriptor: Ljava/time/Duration;
+    flags: (0x0002) ACC_PRIVATE
+
+  private io.gatling.javaapi.core.PauseType _globalPauseType;
+    descriptor: Lio/gatling/javaapi/core/PauseType;
+    flags: (0x0002) ACC_PRIVATE
+
+  private java.util.List<io.gatling.javaapi.core.ThrottleStep> _globalThrottleSteps;
+    descriptor: Ljava/util/List;
+    flags: (0x0002) ACC_PRIVATE
+    Signature: #62                          // Ljava/util/List<Lio/gatling/javaapi/core/ThrottleStep;>;
+
+  public io.gatling.javaapi.core.Simulation();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #6                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: new           #7                  // class java/util/HashMap
+         8: dup
+         9: invokespecial #8                  // Method java/util/HashMap."<init>":()V
+        12: putfield      #5                  // Field _globalProtocols:Ljava/util/Map;
+        15: aload_0
+        16: new           #9                  // class java/util/ArrayList
+        19: dup
+        20: invokespecial #10                 // Method java/util/ArrayList."<init>":()V
+        23: putfield      #4                  // Field _assertions:Ljava/util/List;
+        26: aload_0
+        27: getstatic     #11                 // Field io/gatling/javaapi/core/PauseType.Constant:Lio/gatling/javaapi/core/PauseType;
+        30: putfield      #1                  // Field _globalPauseType:Lio/gatling/javaapi/core/PauseType;
+        33: aload_0
+        34: new           #9                  // class java/util/ArrayList
+        37: dup
+        38: invokespecial #10                 // Method java/util/ArrayList."<init>":()V
+        41: putfield      #2                  // Field _globalThrottleSteps:Ljava/util/List;
+        44: return
+      LineNumberTable:
+        line 37: 0
+        line 40: 4
+        line 41: 15
+        line 43: 26
+        line 44: 33
+
+  public void before();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=0, locals=1, args_size=1
+         0: return
+      LineNumberTable:
+        line 50: 0
+
+  public void after();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=0, locals=1, args_size=1
+         0: return
+      LineNumberTable:
+        line 53: 0
+
+  public io.gatling.javaapi.core.Simulation$SetUp setUp(io.gatling.javaapi.core.PopulationBuilder...);
+    descriptor: ([Lio/gatling/javaapi/core/PopulationBuilder;)Lio/gatling/javaapi/core/Simulation$SetUp;
+    flags: (0x0081) ACC_PUBLIC, ACC_VARARGS
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: invokestatic  #12                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+         5: invokevirtual #13                 // Method setUp:(Ljava/util/List;)Lio/gatling/javaapi/core/Simulation$SetUp;
+         8: areturn
+      LineNumberTable:
+        line 63: 0
+    RuntimeVisibleAnnotations:
+      0: #72()
+        javax.annotation.Nonnull
+    RuntimeVisibleParameterAnnotations:
+      parameter 0:
+        0: #72()
+          javax.annotation.Nonnull
+
+  public io.gatling.javaapi.core.Simulation$SetUp setUp(java.util.List<io.gatling.javaapi.core.PopulationBuilder>);
+    descriptor: (Ljava/util/List;)Lio/gatling/javaapi/core/Simulation$SetUp;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=2, args_size=2
+         0: aload_0
+         1: getfield      #14                 // Field _populationBuilders:Ljava/util/List;
+         4: ifnull        17
+         7: new           #15                 // class java/lang/UnsupportedOperationException
+        10: dup
+        11: ldc           #16                 // String Can only call setUp once
+        13: invokespecial #17                 // Method java/lang/UnsupportedOperationException."<init>":(Ljava/lang/String;)V
+        16: athrow
+        17: aload_0
+        18: aload_1
+        19: putfield      #14                 // Field _populationBuilders:Ljava/util/List;
+        22: new           #18                 // class io/gatling/javaapi/core/Simulation$SetUp
+        25: dup
+        26: aload_0
+        27: aconst_null
+        28: invokespecial #19                 // Method io/gatling/javaapi/core/Simulation$SetUp."<init>":(Lio/gatling/javaapi/core/Simulation;Lio/gatling/javaapi/core/Simulation$1;)V
+        31: areturn
+      LineNumberTable:
+        line 74: 0
+        line 75: 7
+        line 77: 17
+        line 78: 22
+      StackMapTable: number_of_entries = 1
+        frame_type = 17 /* same */
+    Signature: #76                          // (Ljava/util/List<Lio/gatling/javaapi/core/PopulationBuilder;>;)Lio/gatling/javaapi/core/Simulation$SetUp;
+    RuntimeVisibleAnnotations:
+      0: #72()
+        javax.annotation.Nonnull
+    RuntimeVisibleParameterAnnotations:
+      parameter 0:
+        0: #72()
+          javax.annotation.Nonnull
+
+  public io.gatling.core.scenario.SimulationParams params(io.gatling.core.config.GatlingConfiguration);
+    descriptor: (Lio/gatling/core/config/GatlingConfiguration;)Lio/gatling/core/scenario/SimulationParams;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=11, locals=2, args_size=2
+         0: getstatic     #20                 // Field io/gatling/core/scenario/Simulation$.MODULE$:Lio/gatling/core/scenario/Simulation$;
+         3: aload_0
+         4: invokevirtual #21                 // Method java/lang/Object.getClass:()Ljava/lang/Class;
+         7: invokevirtual #22                 // Method java/lang/Class.getName:()Ljava/lang/String;
+        10: aload_0
+        11: getfield      #14                 // Field _populationBuilders:Ljava/util/List;
+        14: invokeinterface #23,  1           // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+        19: invokedynamic #24,  0             // InvokeDynamic #0:apply:()Ljava/util/function/Function;
+        24: invokeinterface #25,  2           // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+        29: invokestatic  #26                 // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+        32: invokeinterface #27,  2           // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+        37: checkcast     #28                 // class java/util/List
+        40: invokestatic  #29                 // Method io/gatling/javaapi/core/internal/Converters.toScalaSeq:(Ljava/util/List;)Lscala/collection/immutable/Seq;
+        43: invokeinterface #30,  1           // InterfaceMethod scala/collection/immutable/Seq.toList:()Lscala/collection/immutable/List;
+        48: aload_0
+        49: getfield      #5                  // Field _globalProtocols:Ljava/util/Map;
+        52: invokestatic  #31                 // Method io/gatling/javaapi/core/internal/Converters.toScalaMap:(Ljava/util/Map;)Lscala/collection/immutable/Map;
+        55: aload_0
+        56: getfield      #4                  // Field _assertions:Ljava/util/List;
+        59: invokeinterface #23,  1           // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+        64: invokedynamic #32,  0             // InvokeDynamic #1:apply:()Ljava/util/function/Function;
+        69: invokeinterface #25,  2           // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+        74: invokestatic  #26                 // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+        77: invokeinterface #27,  2           // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+        82: checkcast     #28                 // class java/util/List
+        85: invokestatic  #29                 // Method io/gatling/javaapi/core/internal/Converters.toScalaSeq:(Ljava/util/List;)Lscala/collection/immutable/Seq;
+        88: aload_0
+        89: getfield      #3                  // Field _maxDuration:Ljava/time/Duration;
+        92: invokestatic  #33                 // Method scala/Option.apply:(Ljava/lang/Object;)Lscala/Option;
+        95: invokedynamic #34,  0             // InvokeDynamic #2:apply:()Lscala/Function1;
+       100: invokevirtual #35                 // Method scala/Option.map:(Lscala/Function1;)Lscala/Option;
+       103: aload_0
+       104: getfield      #1                  // Field _globalPauseType:Lio/gatling/javaapi/core/PauseType;
+       107: invokevirtual #36                 // Method io/gatling/javaapi/core/PauseType.asScala:()Lio/gatling/core/pause/PauseType;
+       110: aload_0
+       111: getfield      #2                  // Field _globalThrottleSteps:Ljava/util/List;
+       114: invokeinterface #23,  1           // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+       119: invokedynamic #37,  0             // InvokeDynamic #3:apply:()Ljava/util/function/Function;
+       124: invokeinterface #25,  2           // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+       129: invokestatic  #26                 // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+       132: invokeinterface #27,  2           // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+       137: checkcast     #28                 // class java/util/List
+       140: invokestatic  #29                 // Method io/gatling/javaapi/core/internal/Converters.toScalaSeq:(Ljava/util/List;)Lscala/collection/immutable/Seq;
+       143: aload_0
+       144: invokedynamic #38,  0             // InvokeDynamic #4:apply:(Lio/gatling/javaapi/core/Simulation;)Lscala/Function0;
+       149: aload_0
+       150: invokedynamic #39,  0             // InvokeDynamic #5:apply:(Lio/gatling/javaapi/core/Simulation;)Lscala/Function0;
+       155: aload_1
+       156: invokevirtual #40                 // Method io/gatling/core/scenario/Simulation$.params:(Ljava/lang/String;Lscala/collection/immutable/List;Lscala/collection/immutable/Map;Lscala/collection/immutable/Seq;Lscala/Option;Lio/gatling/core/pause/PauseType;Lscala/collection/Iterable;Lscala/Function0;Lscala/Function0;Lio/gatling/core/config/GatlingConfiguration;)Lio/gatling/core/scenario/SimulationParams;
+       159: areturn
+      LineNumberTable:
+        line 261: 0
+        line 262: 4
+        line 264: 14
+        line 265: 24
+        line 266: 29
+        line 263: 40
+        line 267: 43
+        line 268: 52
+        line 269: 59
+        line 270: 92
+        line 271: 107
+        line 273: 114
+        line 272: 140
+        line 261: 156
+
+  private scala.runtime.BoxedUnit lambda$params$1();
+    descriptor: ()Lscala/runtime/BoxedUnit;
+    flags: (0x1002) ACC_PRIVATE, ACC_SYNTHETIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokevirtual #41                 // Method after:()V
+         4: aconst_null
+         5: areturn
+      LineNumberTable:
+        line 279: 0
+        line 280: 4
+
+  private scala.runtime.BoxedUnit lambda$params$0();
+    descriptor: ()Lscala/runtime/BoxedUnit;
+    flags: (0x1002) ACC_PRIVATE, ACC_SYNTHETIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokevirtual #42                 // Method before:()V
+         4: aconst_null
+         5: areturn
+      LineNumberTable:
+        line 275: 0
+        line 276: 4
+
+  static java.util.Map access$102(io.gatling.javaapi.core.Simulation, java.util.Map);
+    descriptor: (Lio/gatling/javaapi/core/Simulation;Ljava/util/Map;)Ljava/util/Map;
+    flags: (0x1008) ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: dup_x1
+         3: putfield      #5                  // Field _globalProtocols:Ljava/util/Map;
+         6: areturn
+      LineNumberTable:
+        line 37: 0
+
+  static java.util.List access$202(io.gatling.javaapi.core.Simulation, java.util.List);
+    descriptor: (Lio/gatling/javaapi/core/Simulation;Ljava/util/List;)Ljava/util/List;
+    flags: (0x1008) ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: dup_x1
+         3: putfield      #4                  // Field _assertions:Ljava/util/List;
+         6: areturn
+      LineNumberTable:
+        line 37: 0
+
+  static java.time.Duration access$302(io.gatling.javaapi.core.Simulation, java.time.Duration);
+    descriptor: (Lio/gatling/javaapi/core/Simulation;Ljava/time/Duration;)Ljava/time/Duration;
+    flags: (0x1008) ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: dup_x1
+         3: putfield      #3                  // Field _maxDuration:Ljava/time/Duration;
+         6: areturn
+      LineNumberTable:
+        line 37: 0
+
+  static java.util.List access$402(io.gatling.javaapi.core.Simulation, java.util.List);
+    descriptor: (Lio/gatling/javaapi/core/Simulation;Ljava/util/List;)Ljava/util/List;
+    flags: (0x1008) ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: dup_x1
+         3: putfield      #2                  // Field _globalThrottleSteps:Ljava/util/List;
+         6: areturn
+      LineNumberTable:
+        line 37: 0
+
+  static io.gatling.javaapi.core.PauseType access$502(io.gatling.javaapi.core.Simulation, io.gatling.javaapi.core.PauseType);
+    descriptor: (Lio/gatling/javaapi/core/Simulation;Lio/gatling/javaapi/core/PauseType;)Lio/gatling/javaapi/core/PauseType;
+    flags: (0x1008) ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: dup_x1
+         3: putfield      #1                  // Field _globalPauseType:Lio/gatling/javaapi/core/PauseType;
+         6: areturn
+      LineNumberTable:
+        line 37: 0
+}
+SourceFile: "Simulation.java"
+InnerClasses:
+  static #45;                             // class io/gatling/javaapi/core/Simulation$1
+  public #47= #18 of #43;                 // SetUp=class io/gatling/javaapi/core/Simulation$SetUp of class io/gatling/javaapi/core/Simulation
+  public static final #226= #225 of #235; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+BootstrapMethods:
+  0: #119 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #120 (Ljava/lang/Object;)Ljava/lang/Object;
+      #121 REF_invokeVirtual io/gatling/javaapi/core/PopulationBuilder.asScala:()Lio/gatling/core/structure/PopulationBuilder;
+      #122 (Lio/gatling/javaapi/core/PopulationBuilder;)Lio/gatling/core/structure/PopulationBuilder;
+  1: #119 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #120 (Ljava/lang/Object;)Ljava/lang/Object;
+      #135 REF_invokeVirtual io/gatling/javaapi/core/Assertion.asScala:()Lio/gatling/commons/stats/assertion/Assertion;
+      #136 (Lio/gatling/javaapi/core/Assertion;)Lio/gatling/commons/stats/assertion/Assertion;
+  2: #119 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #120 (Ljava/lang/Object;)Ljava/lang/Object;
+      #139 REF_invokeStatic io/gatling/javaapi/core/internal/Converters.toScalaDuration:(Ljava/time/Duration;)Lscala/concurrent/duration/FiniteDuration;
+      #140 (Ljava/time/Duration;)Lscala/concurrent/duration/FiniteDuration;
+  3: #119 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #120 (Ljava/lang/Object;)Ljava/lang/Object;
+      #144 REF_invokeVirtual io/gatling/javaapi/core/ThrottleStep.asScala:()Lio/gatling/core/controller/throttle/ThrottleStep;
+      #145 (Lio/gatling/javaapi/core/ThrottleStep;)Lio/gatling/core/controller/throttle/ThrottleStep;
+  4: #119 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #146 ()Ljava/lang/Object;
+      #147 REF_invokeSpecial io/gatling/javaapi/core/Simulation.lambda$params$0:()Lscala/runtime/BoxedUnit;
+      #148 ()Lscala/runtime/BoxedUnit;
+  5: #119 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #146 ()Ljava/lang/Object;
+      #150 REF_invokeSpecial io/gatling/javaapi/core/Simulation.lambda$params$1:()Lscala/runtime/BoxedUnit;
+      #148 ()Lscala/runtime/BoxedUnit;

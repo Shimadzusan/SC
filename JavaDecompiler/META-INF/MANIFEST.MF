@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: gatling-core-java
+Implementation-Version: 3.7.2
+Specification-Vendor: Gatling Corp
+Specification-Title: gatling-core-java
+Implementation-Vendor-Id: io.gatling
+Specification-Version: 3.7.2
+Implementation-URL: https://gatling.io
+Implementation-Vendor: Gatling Corp
+
