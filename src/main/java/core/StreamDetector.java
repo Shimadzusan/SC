@@ -34,7 +34,7 @@ public class StreamDetector {
             String path = listFiles.get(j);
             DataOperation dataOperation = new DataOperation();
             String operationalText = dataOperation.readDataFromFile(path);
-            System.out.println("___MARKER___");
+            //System.out.println("___MARKER___");
             String marker = "System.out.println(\"___MARKER___";
             String[] array = operationalText.split("\\n");
             for (int i = 0; i < array.length; i++) {
@@ -56,9 +56,7 @@ public class StreamDetector {
             for (int i = 0; i < array.length; i++) {
                 resultText = resultText + array[i];
             }
-//            System.out.println(resultText);
-
-            //*************************************
+//         
             dataOperation.writeDataToFile(path, resultText);
         }
     }
