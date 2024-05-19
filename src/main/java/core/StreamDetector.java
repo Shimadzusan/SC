@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class StreamDetector {
 
     public StreamDetector() throws IOException {
-        Path dir = Paths.get("C:\\Users\\worker\\IdeaProjects\\Anno2\\src\\main\\java"); // Replace "your_directory_path" with the actual directory path
+        Path dir = Paths.get("C:\\Users\\worker\\IdeaProjects\\Anno3\\src\\main\\java"); // Replace "your_directory_path" with the actual directory path
         ArrayList<String> listFiles = new ArrayList<String>();
         try {
             Files.walkFileTree(dir, new SimpleFileVisitor<Path>() {
@@ -45,7 +45,8 @@ public class StreamDetector {
                 if (array[i].contains("{") && !array[i].contains("class") && !array[i].contains("}") && !array[i].contains("//") && !array[i].contains("interface")) {
                     //                System.out.println(array[i]);
                     System.out.println();
-                    array[i] = array[i] + marker + counter + "\");" + "\n";
+                    String location = (listFiles.get(j).replace(dir.toString(), "")).replace("\\", ".");
+                    array[i] = array[i] + marker + counter + "   * " + array[i].replace("\n", "") + "   * " + location + "\");" + "\n";
                     //                System.out.println(s);
                     counter++;
                     //System.out.println(array[i + 1]);

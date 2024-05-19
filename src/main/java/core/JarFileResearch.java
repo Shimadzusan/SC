@@ -1,18 +1,19 @@
 package core;
 
-import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.util.jar.JarEntry;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.jar.JarFile;
 
 public class JarFileResearch {
-    public static void main(String[] args) {
-        String jarFilePath = "C:\\Users\\worker\\IdeaProjects\\javaLab\\JSON-java\\target\\json-20240303.jar"; // Specify the path to the JAR file here
+    public static void main(String[] args) throws ClassNotFoundException {
+        String jarFilePath = "C:\\Users\\worker\\IdeaProjects\\Anno3\\anno3.jar";
+//        String jarFilePath = "C:\\Users\\worker\\IdeaProjects\\javaLab\\JSON-java\\target\\json-20240303.jar"; // Specify the path to the JAR file here
         //String jarFilePath = "C:\\Users\\worker\\.m2\\repository\\org\\springframework\\spring-core\\6.1.3\\spring-core-6.1.3.jar";
 //        String jarFilePath = "C:\\Users\\worker\\.m2\\repository\\com\\google\\code\\gson\\gson\\2.8.5\\gson-2.8.5.jar";
+
         try {
             displayJarElements(jarFilePath);
         } catch (IOException e) {
@@ -24,20 +25,24 @@ public class JarFileResearch {
     private static void displayJarElements(String jarFilePath) throws IOException {
         JarFile jarFile = new JarFile(jarFilePath);
         System.out.println("Elements in JAR file " + jarFilePath + ":");
-
+        AtomicInteger classCount = new AtomicInteger();
+        AtomicInteger classNotFoundCount = new AtomicInteger();
+        AtomicInteger classDefFoundCount = new AtomicInteger();
         jarFile.stream().forEach(entry -> {
             if (!entry.isDirectory() && entry.getName().endsWith(".class")) {
+                classCount.getAndIncrement();//classCount++
                 String className = entry.getName().replace("/", ".").replace(".class", "");
                 System.out.println(className);
-//                String s = "org.json.Cookie";
                 Class<?> targetClass = null;
                 try {
                     targetClass = Class.forName(className);
                 } catch (ClassNotFoundException e) {
 //                    throw new RuntimeException(e);
                     System.out.println("ClassNotFoundException !!!");
+                    classNotFoundCount.getAndIncrement();//classNotFoundCount++
                 } catch (NoClassDefFoundError e) {
                     System.out.println("NoClassDefFoundError !!!");
+                    classDefFoundCount.getAndIncrement();//classDefFoundCount++
                 } catch (ExceptionInInitializerError e) {
                     System.out.println("ExceptionInInitializerError !!!");
                 } catch (UnsupportedClassVersionError e) {
@@ -46,7 +51,6 @@ public class JarFileResearch {
 
                 try {
                     Method[] methods = targetClass.getDeclaredMethods();
-
                     // Display the names of all methods
                     System.out.println("methods of class " + targetClass.getSimpleName() + "(count: " + methods.length + "):");
                     for (Method method : methods) {
@@ -63,7 +67,6 @@ public class JarFileResearch {
                     }
 
                     Field[] fields = targetClass.getDeclaredFields();
-
                     // Display the names and types of all fields
                     System.out.println("fields of class " + targetClass.getSimpleName() + ":");
                     for (Field field : fields) {
@@ -81,5 +84,6 @@ public class JarFileResearch {
         });
 
         jarFile.close();
+        System.out.println("classCount: " + classCount + " classNotFoundCount: " + classNotFoundCount + " classDefFoundCount: " + classDefFoundCount);
     }
 }
