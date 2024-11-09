@@ -3,6 +3,7 @@ package core;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
+import java.sql.Struct;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.jar.JarFile;
@@ -12,7 +13,8 @@ public class JarFileResearchAlt {
     public  JarFileResearchAlt() throws IOException {
         DataBase dataBase = new DataBase();
 //        String jarFilePath = "C:\\Users\\worker\\IdeaProjects\\Anno3\\anno3.jar";
-        String jarFilePath = "C:\\Users\\worker\\IdeaProjects\\javaLab\\JSON-java\\target\\json-20240303.jar";
+        //String jarFilePath = "C:\\Users\\worker\\IdeaProjects\\javaLab\\JSON-java\\target\\json-20240303.jar";
+        String jarFilePath = "C:\\Users\\worker\\.m2\\repository\\io\\gatling\\gatling-core-java\\3.7.2\\gatling-core-java-3.7.2.jar";
         JarFile jarFile = new JarFile(jarFilePath);
         System.out.println("Elements in JAR file " + jarFilePath + ":");
         AtomicReference<String> dataBaseRow = new AtomicReference<>("");
@@ -64,7 +66,7 @@ public class JarFileResearchAlt {
                         System.out.println(dataBaseRow.get());
                         System.out.println();
                         String[] arr = dataBaseRow.get().split(";");
-                        dataBase.sendData(arr[0],arr[1],arr[2],arr[3]);
+                        //dataBase.sendData(arr[0],arr[1],arr[2],arr[3]);
                     }
 
 /* Fields */

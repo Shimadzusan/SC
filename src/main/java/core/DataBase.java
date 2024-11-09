@@ -9,7 +9,13 @@ import java.util.Date;
 
 public class DataBase {
     private Connection connection;
-  
+    private String url = "jdbc:postgresql://localhost:5432/base_009";
+    private String username = "postgres";
+    private String password = "6z$DAfl56z$DAfl5";
+
+//    private String url = "jdbc:postgresql://95.174.92.18:5432/base_008";
+//    private String username = "user_x";
+//    private String password = "6z$DAfl56z$DAfl5";
 
     public DataBase() {
         try {

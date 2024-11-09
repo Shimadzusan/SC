@@ -13,8 +13,9 @@ public class Launch {
      * Project SC it is from Scan Code
      */
     public static void main(String[] args) throws IOException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
-//        new Research();
-        java_io();
+        new FileDataOperations("C:\\Users\\worker\\exaCompare\\Stub_2\\src");
+        //        new Research();
+        //java_io();
 //        new PackageResearch();
 //        new JarFileResearchAlt();
 //        DataOperation dataOperation = new DataOperation();
